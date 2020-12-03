@@ -1,46 +1,45 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using System.Text.RegularExpressions;
 
 namespace Login
 {
-   public class LoginInfo
+    public class LoginInfo
     {
         public string Title { get; set; }
         public string Name { get; set; }
-
+        string TextOfMSG;
         public string Password
         {
-            get { return Password; }
+            get { return TextOfMSG; }
             set
             {
-                if (Password.Length >= 8)
+                if (value.Length < 8)
                 {
-                    if (true)//Obsahuje sp. znak
-                    {
-                        if (true)//Obsahuje velke pismeno
-                        {
-
-                        }
-                        else  //Vyhodit error ze nema velke pismeno
-                        {
-
-                        }
-
-                    }
-                    else //Vyhodit error ze neobsahuje sp. ynak
-                    {
-
-                    }
+                    TextOfMSG = "Heslo nemá dostatek znaku";
                 }
-                else //Vyhodit error ze nama dostatek znaku
+                else if (!Regex.IsMatch(value, @"\d"))//Obsahuje sp. znak
                 {
+                    TextOfMSG = "Heslo neobsahuje specialni znak";
+                }
+                else if (value.ToLower() == value)
+                {
+                    TextOfMSG = "Heslo neobsahuje velke pismeno";
 
                 }
-               
-                Password = value; 
+                else
+                {
+                    TextOfMSG = value;
+                }
+
             }
-        }
+
+
+
+
+        }          
+
 
 
         public LoginInfo(string title, string name, string pass)

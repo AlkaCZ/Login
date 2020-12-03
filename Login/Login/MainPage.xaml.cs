@@ -18,8 +18,18 @@ namespace Login
 
         private void Button_Clicked(object sender, EventArgs e)
         {
-            Page p = new Ello();
-            Application.Current.MainPage.Navigation.PushAsync(new NavigationPage(p));
+            LoginInfo loginInfo = new LoginInfo(titlePicker.SelectedItem.ToString(), name.Text, password.Text);
+            if (loginInfo.Password != password.Text)
+            {
+                Application.Current.MainPage.DisplayAlert("Error", loginInfo.Password, "OK");
+            }
+
+            else
+            {
+                Page p = new Ello(loginInfo);
+                Application.Current.MainPage.Navigation.PushAsync(new NavigationPage(p));
+            }
+   
 
         }
     }

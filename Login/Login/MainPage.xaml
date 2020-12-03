@@ -7,7 +7,7 @@
             <Label Text="Login" HorizontalTextAlignment="Center" TextColor="White" FontSize="36"/>
         </Frame>
             <Label  Margin="10,0,0,0" Text="Title" FontSize="Medium"/>
-        <Picker>
+        <Picker x:Name="titlePicker">
             <Picker.Items>
                 <x:String>Pan</x:String>
                 <x:String>Paní</x:String>
@@ -16,9 +16,9 @@
             </Picker.Items>
         </Picker>
         <Label Margin="10,0,0,0" Text="Name"></Label>
-        <Entry x:Name="Name"></Entry>
+        <Entry x:Name="name"></Entry>
         <Label  Margin="10,0,0,0" Text="Password"></Label>
-        <Entry IsPassword="True" x:Name="Password"></Entry>
+        <Entry IsPassword="True" x:Name="password"></Entry>
         <Button Text="Login" Clicked="Button_Clicked" BackgroundColor="PaleVioletRed" CornerRadius="10" Margin="10,0,10,0"></Button>
     </StackLayout>
 

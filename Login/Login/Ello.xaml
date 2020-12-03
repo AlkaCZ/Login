@@ -7,9 +7,12 @@
             <Frame>
                 <Label Text="Hello" FontSize="Title"></Label>
             </Frame>
-            <Label x:Name="TitleHello" Text="Title"></Label>
-            <Label x:Name="NameHello" Text="Name"></Label>
-            <Label x:Name="PassHello" Text="Password"></Label>
+            <Label Text="Title:" FontSize="Medium" Margin="10,0,0,0"></Label>
+            <Label x:Name="TitleHello" FontSize="Medium" Text="Title" Margin="10,0,0,0"></Label>
+            <Label Text="Name:" FontSize="Medium" Margin="10,0,0,0"></Label>
+            <Label x:Name="NameHello" FontSize="Medium" Text="Name" Margin="10,0,0,0"></Label>
+            <Label Text="Password:" FontSize="Medium" Margin="10,0,0,0"></Label>
+            <Label x:Name="PassHello" FontSize="Medium" Text="Password" Margin="10,0,0,0"></Label>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

@@ -12,9 +12,12 @@ namespace Login
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class Ello : ContentPage
     {
-        public Ello()
+        public Ello(LoginInfo loginInfo)
         {
             InitializeComponent();
+            TitleHello.Text = loginInfo.Title;
+            NameHello.Text = loginInfo.Name;
+            PassHello.Text = loginInfo.Password;
         }
     }
 }
