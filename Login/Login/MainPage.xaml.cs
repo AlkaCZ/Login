@@ -13,6 +13,14 @@ namespace Login
         public MainPage()
         {
             InitializeComponent();
+
+        }
+
+        private void Button_Clicked(object sender, EventArgs e)
+        {
+            Page p = new Ello();
+            Application.Current.MainPage.Navigation.PushAsync(new NavigationPage(p));
+
         }
     }
 }
