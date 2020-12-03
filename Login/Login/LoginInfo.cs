@@ -19,7 +19,7 @@ namespace Login
                 {
                     TextOfMSG = "Heslo nemá dostatek znaku";
                 }
-                else if (!Regex.IsMatch(value, @"\d"))//Obsahuje sp. znak
+                else if (Regex.IsMatch(value, "^[a-zA-Z0-9 ]*$"))
                 {
                     TextOfMSG = "Heslo neobsahuje specialni znak";
                 }
